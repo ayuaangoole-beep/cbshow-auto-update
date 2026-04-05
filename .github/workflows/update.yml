@@ -1,8 +1,7 @@
 name: cbshow auto update
 
 on:
-  schedule:
-    - cron: '45 13 5 * *'  # 台灣時間 每月5號 21:45
+  workflow_dispatch:  # 手動觸發
 
 jobs:
   run-script:
@@ -18,4 +17,4 @@ jobs:
           python-version: '3.10'
 
       - name: 執行腳本
-        run: auto_update.py
+        run: python auto_update.py
