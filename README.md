@@ -1,0 +1,1 @@
+# cbshow-auto-update
