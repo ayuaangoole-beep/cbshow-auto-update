@@ -1,7 +1,7 @@
 name: cbshow auto update
 
 on:
-  workflow_dispatch:  # 手動觸發
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -9,12 +9,17 @@ jobs:
 
     steps:
       - name: 下載程式碼
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 安裝 Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+
+      - name: 安裝 Playwright   # ⬅️ 就是新增這段
+        run: |
+          pip install playwright
+          playwright install --with-deps
 
       - name: 執行腳本
         run: python auto_update.py
