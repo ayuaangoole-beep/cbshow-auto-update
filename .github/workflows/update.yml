@@ -2,7 +2,7 @@ name: cbshow auto update
 
 on:
   schedule:
-    - cron: '10 13 5 * *'  # 台灣21:10
+    - cron: '45 13 5 * *'  # 台灣時間 每月5號 21:45
 
 jobs:
   run-script:
@@ -18,4 +18,4 @@ jobs:
           python-version: '3.10'
 
       - name: 執行腳本
-        run: python cbshow_auto_update.py
+        run: auto_update.py
